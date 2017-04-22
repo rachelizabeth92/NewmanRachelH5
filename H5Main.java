@@ -13,7 +13,7 @@ public class H5Main
     
     while(n > 0)
     {
-      BL.incertAfter(number.nextInt(50));
+      BL.incertAfter(number.nextInt(50) -25);
       n -= 1;
     }
 
@@ -23,6 +23,7 @@ public class H5Main
     
     while(m > 0)
     {
+    int swapCount = 0;
     n = m;
     BL.findHead();
     
@@ -30,17 +31,26 @@ public class H5Main
     {
       element = BL.getCurr();
       BL.findNext();
-      if(element >= BL.getCurr())
+      if(element > BL.getCurr())
       {
         BL.incertBefore(BL.removeCurr());
         BL.findNext();
+        swapCount += 1;
       }
       n -= 1;
      }
-    m -= 1;
+    if(swapCount == 0)
+    {
+      m = 0;
+    }
+    else
+    {
+      m -= 1;
     }
     
-    System.out.println("/n Sorted List: ");
+    }
+    
+    System.out.println("\n Sorted List: ");
     BL.forwardTraverse();
     
     }
