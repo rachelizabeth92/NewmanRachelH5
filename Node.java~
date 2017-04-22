@@ -1,11 +1,11 @@
 
 public class Node 
     {
-        private int element;
+        private String element;
         private Node next;
         private Node prev;
  
-        public Node(int element) 
+        public Node(String element) 
         {
             this.element = element;
             this.next = null;
@@ -33,7 +33,7 @@ public class Node
               return this.prev;
             }
             
-            public int getElem()
+            public String getElem()
             {
               return this.element;
             }
