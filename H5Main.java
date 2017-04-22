@@ -19,22 +19,20 @@ public class H5Main
 
     BL.forwardTraverse();
     
-    m = BL.getSize();
+    m = BL.getSize() - 1;
     
     while(m > 0)
     {
-    n = m - 1;
+    n = m;
     BL.findHead();
     
     while(n > 0)
     {
-      int temp;
       element = BL.getCurr();
       BL.findNext();
       if(element >= BL.getCurr())
       {
-        temp = BL.removeCurr();
-        BL.incertBefore(temp);
+        BL.incertBefore(BL.removeCurr());
         BL.findNext();
       }
       n -= 1;
@@ -42,6 +40,7 @@ public class H5Main
     m -= 1;
     }
     
+    System.out.println("/n Sorted List: ");
     BL.forwardTraverse();
     
     }
