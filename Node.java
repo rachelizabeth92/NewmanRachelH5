@@ -12,7 +12,7 @@ public class Node
             this.prev = null;
         }
             
-            //methods
+            
             public void setNext(Node node)
             {
               this.next = node;
